@@ -79,7 +79,7 @@
     * object.fillText(text, X, Y). Inherits whatever color we are using.
 
 ** arc()
-    * There is no circle function in HTML five. Use arc(). 
+    * There is no circle function in HTML5. Use arc(). 
     * arc(X, Y, Radius/Size, Angle, Radians, whichSide).
     * In rectangle X and Y are in a TOPLEFT of the rectangle. In arc X and Y are in the CENTER of the circle.
     * If radius is 10, the circle will be 20pixels wide, 20pixels tall. Why? Diameter of circle=2r. So 10 * 2=20.
@@ -130,10 +130,10 @@ window.onload = function() {
     
     // Set paddle position value whenever mouse moves.
     canvas.addEventListener('mousemove', function(evt) {
-                                var mousePos = calculateMousePos(evt);
-                                // calculates position of mouse on paddle. Divide PADDLE_HEIGHT by 2 to mouseover center of paddle.
-                                paddleY1 = mousePos.y - (PADDLE_HEIGHT/2);
-                            });
+        var mousePos = calculateMousePos(evt);
+        // calculates position of mouse on paddle. Divide PADDLE_HEIGHT by 2 to mouseover center of paddle.
+        paddleY1 = mousePos.y - (PADDLE_HEIGHT/2);
+        });
 }
 
 // Player can restart game after game ends with a click.
@@ -164,7 +164,7 @@ function calculateMousePos(evt) {
   
 /* 
     * Resets the ball in the center of the screen if either player gets a point.
-    * Continue Screen if either player wins.
+    * Winning screen if either player wins.
 */
 function ballReset() {
     if(player1Score>=WINNER || player2Score>=WINNER) {
@@ -195,7 +195,6 @@ function computerMove() {
         paddleY2-=10;// moves paddle up
     }
 }
-    
     
 // Movement of ball, paddle, Computer.
 function graphicsMove() {
@@ -261,7 +260,7 @@ function graphicsMove() {
 
 // Graphics in game; ball, paddle, net, the score and the winning screen info.
 function graphics() {  
-    // the black canvas
+    // the winning screen
     graphicsClass(0, 0, canvas.width, canvas.height, '#7f4bd1');
     
     if(winningScreen) {
@@ -300,13 +299,13 @@ function graphics() {
     canvasContext.fillText(player2Score, canvas.width -250, canvas.height-450); // displays on right screen;
 }
 
-//Function class for graphics, since multiple graphics will be created. Can be created after graphics() since it's a declared function.
+// function class for graphics, since multiple graphics will be created. Can be created after graphics() since it's a declared function.
 function graphicsClass(leftX, topY, width, height, drawColor) { 
     canvasContext.fillStyle = drawColor; 
     canvasContext.fillRect(leftX,topY,width, height);
 }
 
-//Function class for the ball drawing, just so it looks better in graphics().
+// function class for the ball drawing, just so it looks better in graphics().
 function drawTheBall(centerX, centerY, radius, drawColor) {
     canvasContext.fillStyle=drawColor;
     canvasContext.beginPath(); // Defines a shape. We need this first to fill the circle.
