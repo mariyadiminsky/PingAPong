@@ -61,7 +61,7 @@
     <div class="font">
         <center> <h1>PingAPong!</h1><br /></center>
         <center><p class="paragraph"> Try your luck with a ping pong classic! You VS Computer. Who will win?</p></center><br />
-        <center><canvas id="gameCanvas" width="1000" height="800"></canvas></center><br />
+        <center><canvas id="gameCanvas" width="800" height="600"></canvas></center><br />
         <center><p class="footer">A fun ping-pong game recreated by <a href="https://github.com/Mashadim"><strong>Masha Diminsky.</strong></a></p><br /></center>
         <center><p class="footer"> Check out the code <a href="https://github.com/Mashadim/PingAPong#pingapong"><strong>here</strong></a>.</p></center><br />
     </div>
@@ -268,14 +268,14 @@ function graphics() {
         
         if(player1Score>=WINNER) {
             canvasContext.font = "bold 21px sans-serif";
-            canvasContext.fillText("YOU WON!!", canvas.width-560, canvas.height-450);
+            canvasContext.fillText("YOU WON!!", canvas.width-470, canvas.height-350);
             canvasContext.font = "12px sans-serif";
-        canvasContext.fillText("Click to Continue", canvas.width-545, canvas.height-150)
+        canvasContext.fillText("Click to Continue", canvas.width-445, canvas.height-150)
         }else if(player2Score>=WINNER){
             canvasContext.font = "bold 24px sans-serif";
-            canvasContext.fillText("The Computer Won!", canvas.width-630, canvas.height -450);
+            canvasContext.fillText("The Computer Won!", canvas.width-530, canvas.height -350);
             canvasContext.font = "12px sans-serif";
-            canvasContext.fillText("Click to Continue", canvas.width-555, canvas.height-150)
+            canvasContext.fillText("Click to Continue", canvas.width-455, canvas.height-150)
         }
         
         
@@ -291,10 +291,11 @@ function graphics() {
     graphicsClass(canvas.width-PADDLE_THICKNESS, paddleY2, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white');
     
     // the ball.
-    drawTheBall(ballX, ballY, 10, 'white');
+    drawTheBall(ballX, ballY, 10, '#ffff00');
     
     // Keep Score.
     canvasContext.font = "bold 36px sans-serif";
+    canvasContext.fillStyle='white';
     canvasContext.fillText(player1Score, 250, canvas.height-450); // displays on left screen;
     canvasContext.fillText(player2Score, canvas.width -250, canvas.height-450); // displays on right screen;
 }
