@@ -3,10 +3,28 @@ body, html {
     margin: 0;
     padding: 0;
     background: #4776E6; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #4776E6 , #8E54E9); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height:100%;
     background-attachment: fixed;
+    animation: bg 30s infinite;
+    transition: background 1.5s ease-in-out;
+}
+
+@keyframes bg {
+    0%, 100% {
+        background: #3498db;
+    }
+    20% {
+        background: #2980b9;
+    }
+    40% {
+        background: #8e44ad;
+    }
+    60% {
+        background: #9b59b6;
+    }
+    80% {
+        background: #3498db;
+    }
 }
 
 #gameCanvas {
@@ -28,7 +46,9 @@ body, html {
     font-size: 12px;
     font-style:italic;
 }
-
+h1, p {
+    color: rgba(255, 255, 255, 0.67);
+}
 h1 {
     padding-top: 10px;
     margin-bottom: 0;
