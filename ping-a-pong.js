@@ -194,7 +194,7 @@ function graphics() {
     graphicsClass(0, 0, canvas.width, canvas.height, '#7f4bd1');
 
     if(winningScreen) {
-        canvasContext.fillStyle = 'white'
+        canvasContext.fillStyle = 'rgba(255, 255, 255, 0.67)'
 
         if(player1Score>=WINNER) {
             canvasContext.font = "bold 21px sans-serif";
